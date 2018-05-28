@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link id="odiv" rel="stylesheet" href="css/green.css">
+</head>
+
+<body>
+    <button onclick="green()">green</button>
+    <button onclick="red()">red</button>
+</body>
+<script>
+    function green() {
+        var odiv = document.getElementById("odiv")
+        odiv.href = "css/green.css"
+    }
+
+    function red() {
+        var odiv = document.getElementById("odiv")
+        odiv.href = "css/red.css"
+    }
+</script>
+
+</html>

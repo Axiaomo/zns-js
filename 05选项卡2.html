@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>选项卡5-22复习</title>
+    <style>
+        input {
+            border: none;
+        }
+
+        .active {
+            background: greenyellow;
+
+        }
+
+        #odiv div {
+            border: 1px solid #ccc;
+            width: 200px;
+            height: 200px;
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var div = document.getElementById("odiv");
+            var obtn = div.getElementsByTagName("input");
+            var odiv = div.getElementsByTagName("div");
+            for (var i = 0; i < obtn.length; i++) {
+                obtn[i].index = i;
+                obtn[i].onclick = function () {
+                    for (var i = 0; i < obtn.length; i++) {
+                        obtn[i].className = "";
+                        odiv[i].style.display = "none"
+                    }
+                    this.className = "active";
+                    odiv[this.index].style.display = "block"
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="odiv">
+        <input type="button" value="学习" class="active">
+        <input type="button" value="教育">
+        <input type="button" value="考试">
+        <input type="button" value="出国">
+
+        <div style="display: block">学习</div>
+        <div>教育</div>
+        <div>考试</div>
+        <div>出国</div>
+    </div>
+</body>
+
+</html>

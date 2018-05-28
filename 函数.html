@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div onmouseover="toblue()" id="div1" onmouseout="tored()"></div>
+</body>
+<script>
+    var div1 = document.getElementById('div1')
+
+    function toblue() {
+        div1.style.background = 'blue'
+    }
+
+    function tored() {
+        div1.style.background = 'red'
+    }
+</script>
+
+</html>

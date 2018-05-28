@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>style和class</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #ccc;
+        }
+
+        .red {
+            background: red;
+        }
+    </style>
+    <script>
+        function tored() {
+            var div1 = document.getElementById("div1");
+            div1.className = "red"
+        }
+
+        function togreen() {
+            var div1 = document.getElementById("div1")
+            div1.style.background = "green"
+        }
+    </script>
+</head>
+
+<body>
+    <input type="button" value="变红" onclick="tored()">
+    <input type="button" value="变绿" onclick="togreen()">
+    <div id="div1"></div>
+</body>
+
+</html>

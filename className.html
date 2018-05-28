@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            background: red;
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #f00;
+        }
+    </style>
+    <script>
+        function addclass() {
+            var div1 = document.getElementById("div1")
+            if (div1.className == "box") {
+                div1.className = ""
+            } else {
+                div1.className = "box"
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <input type="button" value="添加class" onclick=" addclass()">
+    <div id="div1"></div>
+</body>
+
+</html>

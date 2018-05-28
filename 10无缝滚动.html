@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #div1 {
+            width: 712px;
+            height: 108px;
+            position: relative;
+            overflow: hidden;
+            margin: auto;
+            background: red;
+        }
+
+        #div1 ul {
+            position: absolute;
+            left: 0;
+            top: 0;
+            float: left;
+        }
+
+        #div1 ul li {
+            float: left;
+            width: 178px;
+            height: 108px;
+            list-style: none;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var odiv = document.getElementById("div1");
+            var oul = odiv.getElementsByTagName("ul")[0];
+            var ali = oul.getElementsByTagName("li");
+            oul.innerHTML = oul.innerHTML + oul.innerHTML
+            oul.style.width = ali[0].offsetWidth * ali.length + "px";
+            var timer = setInterval(function () {
+                if (oul.offsetLeft < -oul.offsetWidth / 2) {
+                    oul.style.left = "0"
+                }
+                if (oul.offsetLeft > 0) {
+                    oul.style.left = -oul.offsetWidth / 2 + "px"
+                }
+                oul.style.left = oul.offsetLeft + 2 + "px";
+            }, 30)
+        }
+    </script>
+</head>
+
+<body>
+    <div id="div1">
+        <ul>
+            <li>
+                <img src="./images/1.jpg" />
+            </li>
+            <li>
+                <img src="./images/2.jpg" />
+            </li>
+            <li>
+                <img src="./images/3.jpg" />
+            </li>
+            <li>
+                <img src="./images/4.jpg" />
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>
