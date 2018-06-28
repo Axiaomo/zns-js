@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 712px;
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+            text-align: center
+        }
+
+        ul {
+            width: 712px;
+            position: absolute;
+            left: 0;
+        }
+
+        li {
+            list-style: none;
+            float: left;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oDiv = document.getElementById("odiv");
+            var oUl = oDiv.getElementsByTagName("ul")[0];
+            var ali = oUl.getElementsByTagName("li");
+            var aleft = document.getElementById("left");
+            var aright = document.getElementById("right");
+            oUl.innerHTML = oUl.innerHTML + oUl.innerHTML;
+            // 切换左右
+            var speed = -2
+            aleft.onclick = function () {
+                speed = -2
+            }
+            aright.onclick = function () {
+                speed = +2
+            }
+            oUl.style.width = ali[0].offsetWidth * ali.length + "px";
+            // 滚动
+            function move() {
+                if (oUl.offsetLeft < -oUl.offsetWidth / 2) {
+                    oUl.style.left = 0
+                } else
+                if (oUl.offsetLeft > 0) {
+                    oUl.style.left = -oUl.offsetWidth / 2 + "px"
+                }
+
+                oUl.style.left = oUl.offsetLeft + speed + "px"
+            }
+            var timer = setInterval(move, 30)
+            // 鼠标滑过停止
+            oUl.onmouseover = function () {
+                clearInterval(timer)
+            }
+            oUl.onmouseout = function () {
+                timer = setInterval(move, 30)
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="odiv">
+        <button id="left">left</button>
+        <button id="right">right</button>
+        <ul>
+            <li>
+                <img src="./images/1.jpg">
+            </li>
+            <li>
+                <img src="./images/2.jpg">
+            </li>
+            <li>
+                <img src="./images/3.jpg">
+            </li>
+            <li>
+                <img src="./images/4.jpg">
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

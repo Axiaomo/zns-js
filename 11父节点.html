@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            var oUl = document.getElementById("ull")
+            // alert(oUl.children.length);
+            for (var i = 0; i < oUl.childNodes.length; i++) {
+
+                if (oUl.childNodes[i].nodeType == 1) {
+                    oUl.childNodes[i].style.background = "#f00";
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <ul id="ull">
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+
+</html>
